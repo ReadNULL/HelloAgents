@@ -35,9 +35,12 @@ class MyAgentLLM(HelloAgentsLLM):
                 timeout=self.timeout
             )
         else:
+            self.model = os.getenv("MODEL_ID")
+            self.api_key = os.getenv("DEEPSEEK_API_KEY")
+            self.base_url = os.getenv("DEEPSEEK_BASE_URL")
             super().__init__(
-                model=model,
-                api_key=api_key,
-                base_url=base_url,
+                model=model or self.model,
+                api_key=api_key or self.api_key,
+                base_url=base_url or self.base_url,
                 **kwargs
             )
