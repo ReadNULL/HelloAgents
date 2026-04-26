@@ -4,7 +4,7 @@ from typing import Optional
 from hello_agents import HelloAgentsLLM
 from openai import OpenAI
 
-class MyAgentLLM(HelloAgentsLLM):
+class AgentsLLM(HelloAgentsLLM):
     def __init__(
             self,
             model: Optional[str] = None,

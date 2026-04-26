@@ -3,7 +3,7 @@ from typing import Optional
 
 
 from core.config import Config
-from core.llm import MyAgentLLM
+from core.llm import AgentsLLM
 from core.message import Message
 
 
@@ -13,7 +13,7 @@ class Agent(ABC):
     def __init__(
             self,
             name: str,
-            llm: MyAgentLLM,
+            llm: AgentsLLM,
             system_prompt: Optional[str] = None,
             config: Optional[Config] = None
     ):
